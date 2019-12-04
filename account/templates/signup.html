@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+        <style>
+        form{
+        text-align:center;
+        padding:10px;
+
+        }
+    </style>
+</head>
+<body>
+{% extends 'themes.html'%}
+{% block content %}
+<form>
+    <input type="text" name="user_name" >
+    <br>
+    用户名
+    <br>
+     <input type="text" name="password" >
+    <br>
+    密码
+    <br>
+     <input type="text" name="repassword" >
+    <br>
+    重新输入密码
+    <br>
+</form>
+
+
+{% endblock content %}
+</body>
+</html>
