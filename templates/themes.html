@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主题模板</title>
+    <style>
+        nav{
+        width:80%;
+        height:50px;
+        display:table;
+        background-color:#3C3C3C;
+        margin:auto;
+        }
+        nav>ul{
+        list-style-type:none;
+        }
+        nav>ul>li{
+        color:white;
+        font-size:120%;
+        height:50px;
+        width:10%;
+        display:inline;
+        text-align:center;
+        line-height:35px;
+        }
+
+        a:link,a:visited{
+        text-decoration:none;
+        color:white;
+        }
+
+        a:hover,a:active{
+        padding:3px;
+        font-weight:bold;
+        background-color:#BEBEBE;
+        }
+
+
+
+    </style>
+    <link rel="" href="" type="image/x-icon">
+</head>
+<body>
+<nav>
+    <ul>
+        <li style="float:left;"><a href="www.baidu.com">Productions</a></li>
+        <li style="float:right;"><a href="www.baidu.com">LogIn</a></li>
+        <li style="float:right;"><a href="www.baidu.com">SignUp</a></li>
+    </ul>
+</nav>
+{% block content %}
+{% endblock content %}
+
+
+</body>
+</html>
