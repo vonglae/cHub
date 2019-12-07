@@ -45,7 +45,7 @@ def login(request):
         user_name = request.POST['user_name']
         pass_word = request.POST['password']
         user=auth.authenticate(username=user_name,password=pass_word)
-        if user==None:
+        if user is None:
             return render(request,'login.html',{'loginError':'账号或者密码有错'})
         else:
             auth.login(request,user)

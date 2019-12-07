@@ -38,13 +38,12 @@
     <link rel="" href="" type="image/x-icon">
 </head>
 <body>
-
 <nav>
     <ul>
         <li style="float:left;"><a href="{% url 'home' %}">Productions</a></li>
         {% if user.is_authenticated %}
         <li style="float:right">
-            <a href="{% url 'Logout' %}">Logout</a>
+            <a href="Javascript:{ document.getElementById('logout').submit()}">Logout</a>
             <form id="logout" method="POST" action="{% url 'Logout' %}">
                 {% csrf_token %}
                <input type="hidden" >
