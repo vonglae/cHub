@@ -29,29 +29,39 @@
         text-decoration:none;
         color:white;
         }
-
         a:hover,a:active{
         padding:3px;
         font-weight:bold;
         background-color:#BEBEBE;
         }
-
-
-
     </style>
     <link rel="" href="" type="image/x-icon">
 </head>
 <body>
+
 <nav>
     <ul>
         <li style="float:left;"><a href="{% url 'home' %}">Productions</a></li>
-        <li style="float:right;"><a href="{ %  % }">LogIn</a></li>
+        {% if user.is_authenticated %}
+        <li style="float:right">
+            <a href="{% url 'Logout' %}">Logout</a>
+            <form id="logout" method="POST" action="{% url 'Logout' %}">
+                {% csrf_token %}
+               <input type="hidden" >
+            </form>
+        </li>
+        {% else %}
+         <li style="float:right;"><a href="{% url 'Login' %}">LogIn</a></li>
         <li style="float:right;"><a href="{% url 'SignUp' %}">SignUp</a></li>
+        {% endif %}
     </ul>
 </nav>
 {% block content %}
 {% endblock content %}
 
-
+<script>
+    x=document.getElementById('logout')
+    x.addEventListener('click',sumbit)
+</script>
 </body>
 </html>

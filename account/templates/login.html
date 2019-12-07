@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <style>
+        h2,form{
+        text-align:center;
+        padding:10px;
+        }
+        form>div{
+        font-size:10px;
+        color:red;
+        }
+    </style>
+</head>
+<body>
+{% extends 'themes.html' %}
+{% block content %}
+<h2>登陆</h2>
+<form method="POST" action="{% url 'Login' %}" style="align:center">
+    {% csrf_token %}
+    <input type="text" name="user_name">
+    <br>
+    用户名称
+    <br>
+    <input type="password" name="password">
+    <br>
+    密码
+    <br>
+    <button type="submit">登陆</button>
+    <br>
+    <div>{{ loginError }}</div>
+</form>
+
+{% endblock content %}
+
+</body>
+</html>
