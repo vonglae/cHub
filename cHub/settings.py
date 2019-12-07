@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT =os.path.join(BASE_DIR,'static/')
 #STATIC_ROOT是存放静态文件的地址
 
-STATIC_DIR = [os.path.join(BASE_DIR,'static/')]
+STATIC_DIR = [os.path.join(BASE_DIR,'product/static/')]
 #STATIC_DIR是搜索静态文件时的地址
 
 MEDIA_URL='/media/'

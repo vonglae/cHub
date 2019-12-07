@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>注册页面</title>
         <style>
+        h2{
+        text-align:center;
+        }
         form{
         text-align:center;
         padding:10px;
-
         }
     </style>
 </head>
 <body>
 {% extends 'themes.html'%}
 {% block content %}
-<form>
+<h2>注册cHub账号</h2>
+<form method="POST" action="{% url 'SignUp' %}">
+    {% csrf_token %}
     <input type="text" name="user_name" >
     <br>
     用户名
+    {{ userError }}
     <br>
-     <input type="text" name="password" >
+    <input type="password" name="password" >
     <br>
     密码
+   {{ passwordError }}
     <br>
-     <input type="text" name="repassword" >
+   <input type="password" name="re_password" >
     <br>
-    重新输入密码
+    再次输入密码
+    <br>
+    {{ Success }}
+    <br>
+    <button type="submit">确认</button>
     <br>
 </form>
 

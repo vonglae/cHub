@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
     <title>主题模板</title>
@@ -43,9 +44,9 @@
 <body>
 <nav>
     <ul>
-        <li style="float:left;"><a href="www.baidu.com">Productions</a></li>
-        <li style="float:right;"><a href="www.baidu.com">LogIn</a></li>
-        <li style="float:right;"><a href="www.baidu.com">SignUp</a></li>
+        <li style="float:left;"><a href="{% url 'home' %}">Productions</a></li>
+        <li style="float:right;"><a href="{ %  % }">LogIn</a></li>
+        <li style="float:right;"><a href="{% url 'SignUp' %}">SignUp</a></li>
     </ul>
 </nav>
 {% block content %}
