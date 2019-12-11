@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布页面</title>
+    <style>
+        h2,form{
+        text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+{% extends 'themes.html' %}
+
+{% block content %}
+<h2>
+    发布产品
+</h2>
+<form method="POST" action="{% url 'Publish' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="product_name">
+    <br>
+    产品名称
+    <br>
+    <br>
+    <textarea name="introduction" style="width:500px;height:100px"></textarea>
+    <br>
+    产品介绍
+    <br>
+    <br>
+    <input type="text" name="product_linked">
+    <br>
+    产品链接
+    <br>
+    <br>
+    <input type="file"  name="icon">
+    <br>
+    产品图标（缩略图）
+    <br>
+    <br>
+    <input type="file"  name="picture">
+    <br>
+    产品全图
+    <br>
+    {{ imageError }}
+    <br>
+    <button type="submit">发布</button>
+</form>
+
+
+
+{% endblock content %}
+
+</body>
+</html>
