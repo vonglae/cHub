@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品详细页面</title>
+    <style>
+        div{
+        text-align:center
+        }
+    </style>
+</head>
+<body>
+{% extends 'themes.html'%}
+{% block content %}
+
+
+<div>
+    <div ><img src="{{ product.icon.url }}"></div>
+    <br>
+    <h3 style="text-align:center">{{ product.product_name}}</h3>
+    <br>
+    <textarea >{{ product.introduction }}</textarea>
+</div>
+
+
+
+
+{% endblock content %}
+</body>
+</html>

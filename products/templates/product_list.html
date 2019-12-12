@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <title>欢迎来到cHub</title>
     <style>
-        form{
+        .card{
         text-align:center;
-        padding:10px;
+        width:200px;
+        height:300px;
         }
     </style>
 </head>
 <body>
 {% extends 'themes.html'%}
 {% block content %}
+{% for product in products.all %}
+<div class="card">
+    <div style="width:100%;height:50%;display:table;margin:auto;"><img style="height:100%;" src="{{ product.icon.url }}"></div>
+    <div style="width:100%;height:50%;">
+        <h3 ><a  style="color:black;padding:0;" href="products/{{ product.id }}">{{ product.product_name}}</a></h3>
+    <textarea style="width:100%;height:50%;">{{ product.introduction }}</textarea>
+    <br>
+    </div>
+
+</div>
+
+{% endfor %}
+
+
 
 {% endblock content %}
 </body>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import PRODUCT
 from django.utils import timezone
@@ -7,7 +7,17 @@ from django.utils import timezone
 # Create your views here.
 
 def products_list(request):
-    return render(request, 'product_list.html')
+    products=PRODUCT.objects
+    return render(request, 'product_list.html',{'products':products})
+
+
+def detail(request,product_id):
+    product=get_object_or_404(PRODUCT,pk=product_id)
+    return render(request,'detail.html',{'product':product})
+    
+
+
+
 
 
 @login_required
